@@ -1,0 +1,64 @@
+Apps to install
+
+pzip
+
+
+
+
+Add pzip to dolphin context menu:
+ mkdir -p ~/.local/share/kio/servicemenus &&
+cat > ~/.local/share/kio/servicemenus/peazip-kde6.desktop << 'EOF'
+[Desktop Entry]
+Type=Service
+MimeType=inode/directory;application/octet-stream;
+Actions=peazipadd;peazipadd7z;peazipaddgzip;peazipaddzip;peazipconvert;peazipext;peazipexthere;peazipextfolder;peazipopen;
+X-KDE-Submenu=PeaZip
+X-KDE-Priority=TopLevel
+
+[Desktop Action peazipadd]
+Name=Add to archive...
+Icon=peazip
+Exec=peazip -add2multi %F
+
+[Desktop Action peazipadd7z]
+Name=Add to .7z
+Icon=peazip
+Exec=peazip -add2multi7z %F
+
+[Desktop Action peazipaddgzip]
+Name=Add to .tar.gz
+Icon=peazip
+Exec=peazip -add2multitar gz %F
+
+[Desktop Action peazipaddzip]
+Name=Add to .zip
+Icon=peazip
+Exec=peazip -add2multizip %F
+
+[Desktop Action peazipconvert]
+Name=Convert...
+Icon=peazip
+Exec=peazip -convert2mult %F
+
+[Desktop Action peazipext]
+Name=Extract...
+Icon=peazip_extract
+Exec=sh -c 'peazip %F'
+
+[Desktop Action peazipexthere]
+Name=Extract here
+Icon=peazip_extract
+Exec=peazip -ext2here %F
+
+[Desktop Action peazipextfolder]
+Name=Extract here to new folder
+Icon=peazip_extract
+Exec=peazip -ext2folder %F
+
+[Desktop Action peazipopen]
+Name=Open with PeaZip...
+Icon=peazip
+Exec=peazip %F
+EOF
+
+chmod +x ~/.local/share/kio/servicemenus/peazip-kde6.desktop

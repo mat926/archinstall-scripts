@@ -1,0 +1,136 @@
+{
+    "app_config": {
+        "audio_config": {
+            "audio": "pipewire"
+        },
+        "bluetooth_config": {
+            "enabled": false
+        },
+        "print_service_config": {
+            "enabled": true
+        }
+    },
+    "archinstall-language": "English",
+    "auth_config": {},
+    "bootloader_config": {
+        "bootloader": "Systemd-boot",
+        "removable": false,
+        "uki": true
+    },
+    "custom_commands": [],
+    "hostname": "archlinux",
+    "kernels": [
+        "linux",
+        "linux-lts"
+    ],
+    "locale_config": {
+        "kb_layout": "us",
+        "sys_enc": "UTF-8",
+        "sys_lang": "en_US.UTF-8"
+    },
+    "mirror_config": {
+        "custom_repositories": [],
+        "custom_servers": [],
+        "mirror_regions": {
+            "United States": [
+                "https://mirror.adectra.com/archlinux/$repo/os/$arch",
+                "https://mirror.akane.network/archmirror/$repo/os/$arch",
+                "https://arlm.tyzoid.com/$repo/os/$arch",
+                "https://ny.us.mirrors.bjg.at/arch/$repo/os/$arch",
+                "https://mirrors.bloomu.edu/archlinux/$repo/os/$arch",
+                "https://arch-mirror.brightlight.today/$repo/os/$arch",
+                "https://us.mirrors.cicku.me/archlinux/$repo/os/$arch",
+                "https://mirror.clarkson.edu/archlinux/$repo/os/$arch",
+                "https://mirror.colonelhosting.com/archlinux/$repo/os/$arch",
+                "https://arch.mirror.constant.com/$repo/os/$arch",
+                "https://mirror.cs.odu.edu/archlinux/$repo/os/$arch",
+                "https://repo.customcomputercare.com/archlinux/$repo/os/$arch",
+                "https://codingflyboy.mm.fcix.net/archlinux/$repo/os/$arch",
+                "https://coresite.mm.fcix.net/archlinux/$repo/os/$arch",
+                "https://forksystems.mm.fcix.net/archlinux/$repo/os/$arch",
+                "https://irltoolkit.mm.fcix.net/archlinux/$repo/os/$arch",
+                "https://mirror.fcix.net/archlinux/$repo/os/$arch",
+                "https://mnvoip.mm.fcix.net/archlinux/$repo/os/$arch",
+                "https://nnenix.mm.fcix.net/archlinux/$repo/os/$arch",
+                "https://nocix.mm.fcix.net/archlinux/$repo/os/$arch",
+                "https://ohioix.mm.fcix.net/archlinux/$repo/os/$arch",
+                "https://opencolo.mm.fcix.net/archlinux/$repo/os/$arch",
+                "https://southfront.mm.fcix.net/archlinux/$repo/os/$arch",
+                "https://volico.mm.fcix.net/archlinux/$repo/os/$arch",
+                "https://ziply.mm.fcix.net/archlinux/$repo/os/$arch",
+                "https://losangeles.mirror.pkgbuild.com/$repo/os/$arch",
+                "https://mirror.givebytes.net/archlinux/$repo/os/$arch",
+                "https://arch.goober.cloud/$repo/os/$arch",
+                "https://arch.hu.fo/archlinux/$repo/os/$arch",
+                "https://arch.hugeblank.dev/$repo/os/$arch",
+                "https://repo.ialab.dsu.edu/archlinux/$repo/os/$arch",
+                "https://mirrors.iu13.net/archlinux/$repo/os/$arch",
+                "https://arch.mirror.k0.ae/$repo/os/$arch",
+                "https://mirrors.kernel.org/archlinux/$repo/os/$arch",
+                "https://mirrors.lahansons.com/archlinux/$repo/os/$arch",
+                "https://mirror.sfo12.us.leaseweb.net/archlinux/$repo/os/$arch",
+                "https://mirror.wdc1.us.leaseweb.net/archlinux/$repo/os/$arch",
+                "https://mirrors.lug.mtu.edu/archlinux/$repo/os/$arch",
+                "https://m.lqy.me/arch/$repo/os/$arch",
+                "https://arch.mirror.marcusspencer.us:4443/archlinux/$repo/os/$arch",
+                "https://arch.miningtcup.me/$repo/os/$arch",
+                "https://mirrors.shr.cx/arch/$repo/os/$arch",
+                "https://iad.mirrors.misaka.one/archlinux/$repo/os/$arch",
+                "https://mirrors.mit.edu/archlinux/$repo/os/$arch",
+                "https://mirror.mra.sh/archlinux/$repo/os/$arch",
+                "https://us.arch.niranjan.co/$repo/os/$arch",
+                "https://mirrors.ocf.berkeley.edu/archlinux/$repo/os/$arch",
+                "https://archmirror1.octyl.net/$repo/os/$arch",
+                "https://ftp.osuosl.org/pub/archlinux/$repo/os/$arch",
+                "https://mirror.pilotfiber.com/archlinux/$repo/os/$arch",
+                "https://dfw.mirror.rackspace.com/archlinux/$repo/os/$arch",
+                "https://iad.mirror.rackspace.com/archlinux/$repo/os/$arch",
+                "https://ord.mirror.rackspace.com/archlinux/$repo/os/$arch",
+                "https://plug-mirror.rcac.purdue.edu/archlinux/$repo/os/$arch",
+                "https://mirrors.rit.edu/archlinux/$repo/os/$arch",
+                "https://mirrors.smeal.xyz/arch-linux/$repo/os/$arch",
+                "https://mirrors.sonic.net/archlinux/$repo/os/$arch",
+                "https://us-mnz.soulharsh007.dev/archlinux/$repo/os/$arch",
+                "https://mirror.pit.teraswitch.com/archlinux/$repo/os/$arch",
+                "https://mirror.theash.xyz/arch/$repo/os/$arch",
+                "https://mirror.umd.edu/archlinux/$repo/os/$arch",
+                "https://mirrors.vectair.net/archlinux/$repo/os/$arch",
+                "https://mirrors.xtom.com/archlinux/$repo/os/$arch",
+                "https://yonderly.org/mirrors/archlinux/$repo/os/$arch",
+                "https://mirror.zackmyers.io/archlinux/$repo/os/$arch",
+                "https://zxcvfdsa.com/arch/$repo/os/$arch"
+            ]
+        },
+        "optional_repositories": []
+    },
+    "network_config": {
+        "type": "nm"
+    },
+    "ntp": true,
+    "packages": [
+        "vlc",
+        "firefox"
+    ],
+    "parallel_downloads": 0,
+    "profile_config": {
+        "gfx_driver": "All open-source",
+        "greeter": "sddm",
+        "profile": {
+            "custom_settings": {
+                "KDE Plasma": {}
+            },
+            "details": [
+                "KDE Plasma"
+            ],
+            "main": "Desktop"
+        }
+    },
+    "script": null,
+    "services": [],
+    "swap": {
+        "algorithm": "zstd",
+        "enabled": true
+    },
+    "timezone": "US/Arizona",
+    "version": "3.0.15"
+}
