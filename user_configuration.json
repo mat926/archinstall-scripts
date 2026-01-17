@@ -12,7 +12,7 @@
     },
     "archinstall-language": "English",
     "auth_config": {},
-    "custom_commands": [],
+    "custom_commands": ["curl -fsSL https://raw.githubusercontent.com/mat926/archinstall-scripts/refs/heads/main/postinstall.sh | bash"],
     "hostname": "archlinux",
     "kernels": [
         "linux",
@@ -118,7 +118,7 @@
             "main": "Desktop"
         }
     },
-    "script": "postinstall.sh",
+    "script": null,
     "services": [],
     "swap": {
         "algorithm": "zstd",
