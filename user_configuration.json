@@ -118,7 +118,7 @@
             "main": "Desktop"
         }
     },
-    "script": "curl -fsSL https://raw.githubusercontent.com/mat926/archinstall-scripts/refs/heads/main/postinstall.sh | bash",
+    "script": "postinstall.sh",
     "services": [],
     "swap": {
         "algorithm": "zstd",
