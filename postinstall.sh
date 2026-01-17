@@ -10,7 +10,7 @@ pacman -Rns --noconfirm ark kate #konsole
 #######################################################
 ## Install AUR helpers
 #######################################################
-pacman -S --noconfirm--needed base-devel
+pacman -S --noconfirm --needed base-devel
 cd /tmp
 git clone https://aur.archlinux.org/paru.git paru-tmp
 chown -R $USERNAME:$USERNAME paru-tmp
@@ -19,4 +19,4 @@ runuser -u $USERNAME -- makepkg -si --noconfirm
 
 # Clean up after
 cd /tmp
-rm -rf paru-tmp
+#rm -rf paru-tmp
