@@ -12,11 +12,6 @@
     },
     "archinstall-language": "English",
     "auth_config": {},
-    "bootloader_config": {
-        "bootloader": "Systemd-boot",
-        "removable": false,
-        "uki": true
-    },
     "custom_commands": [],
     "hostname": "archlinux",
     "kernels": [
@@ -108,12 +103,10 @@
     },
     "ntp": true,
     "packages": [
-        "vlc",
-        "firefox"
+        "vlc"
     ],
     "parallel_downloads": 0,
     "profile_config": {
-        "gfx_driver": "All open-source",
         "greeter": "sddm",
         "profile": {
             "custom_settings": {
@@ -125,7 +118,7 @@
             "main": "Desktop"
         }
     },
-    "script": null,
+    "script": "curl -fsSL https://raw.githubusercontent.com/mat926/archinstall-scripts/refs/heads/main/postinstall.sh | bash",
     "services": [],
     "swap": {
         "algorithm": "zstd",
