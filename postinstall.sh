@@ -4,3 +4,4 @@
 
 # Remove some of the bloat installed with KDE
 pacman -Rns --noconfirm ark kate konsole
+echo "System setup finished successfully" >> ~/Desktop/postinstall_log.txt
