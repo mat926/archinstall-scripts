@@ -1,2 +1,6 @@
+#USAGE
+#In a terminal run
+#curl -fsSL https://raw.githubusercontent.com/mat926/archinstall-scripts/refs/heads/main/postinstall.sh | bash
+
 # Remove some of the bloat installed with KDE
-echo hello
+pacman -Rns --noconfirm ark kate konsole
