@@ -15,7 +15,7 @@ cd /tmp
 git clone https://aur.archlinux.org/paru.git paru-tmp
 chown -R $USERNAME:$USERNAME paru-tmp
 cd paru-tmp
-runuser -u $USERNAME -- makepkg -si --noconfirm
+#runuser -u $USERNAME -- makepkg -si --noconfirm
 
 # Clean up after
 cd /tmp
