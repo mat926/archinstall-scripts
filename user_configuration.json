@@ -107,7 +107,7 @@
         "git"
     ],
     "parallel_downloads": 0,
-    "profile_config": null, //The script will install KDE
+    "profile_config": null,
     "script": null,
     "services": [],
     "swap": {
