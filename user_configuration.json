@@ -103,7 +103,8 @@
     },
     "ntp": true,
     "packages": [
-        "vlc"
+        "vlc",
+        "git"
     ],
     "parallel_downloads": 0,
     "profile_config": {
