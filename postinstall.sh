@@ -53,6 +53,7 @@ sudo pacman -S --needed --noconfirm \
     kde-gtk-config \
     kscreen \
     plasma-firewall \
+    konsole \   #temporary for testing
     ufw
 
 # dolphin - file manager
@@ -113,3 +114,18 @@ makepkg -si --noconfirm
 # # Clean up after
 cd /tmp
 rm -rf paru-tmp
+
+
+
+
+
+
+echo "Post-installation script completed successfully!"
+
+# 10 second countdown before reboot
+for i in {10..1}; do
+    echo "Rebooting in $i seconds..."
+    sleep 1
+done
+
+reboot
