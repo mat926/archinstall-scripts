@@ -23,35 +23,7 @@
 #######################################################
 ## Install KDE Plasma apps
 #######################################################
-sudo pacman -S --needed --noconfirm \
-    plasma-desktop \
-    sddm \
-    dolphin \
-    spectacle \
-    gwenview \
-    okular \
-    plasma-nm \
-    plasma-pa \
-    powerdevil \
-    bluedevil \
-    plasma-systemmonitor \
-    kalk \
-    kdeconnect \
-    ksystemlog \
-    kfind \
-    krdc \
-    freerdp \
-    libvncserver \
-    kdepgraphics-thumbnailers \
-    ffmpegthumbs \
-    print-manager \
-    cups \
-    system-config-printer \
-    sddm-kcm \
-    kde-gtk-config \
-    kscreen \
-    plasma-firewall \
-    ufw
+sudo pacman -S --needed --noconfirm plasma-desktop sddm dolphin spectacle gwenview okular plasma-nm plasma-pa powerdevil bluedevil plasma-systemmonitor kalk kdeconnect ksystemlog kfind krdc freerdp libvncserver kdepgraphics-thumbnailers ffmpegthumbs print-manager cups system-config-printer sddm-kcm kde-gtk-config kscreen plasma-firewall ufw
 
 # dolphin - file manager
 # spectacle - screenshot tool
