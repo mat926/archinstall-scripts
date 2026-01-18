@@ -94,11 +94,11 @@ fi
 #######################################################
 
 sudo pacman -S --noconfirm --needed git
-read -p "Enter your Git username: " git_username
-# read -p "Enter your Git email: " git_email
+read -p "Enter your Git username: " git_username < /dev/tty
+read -p "Enter your Git email: " git_email < /dev/tty
 
-# git config --global user.name "$git_username"
-# git config --global user.email "$git_email"
+git config --global user.name "$git_username"
+git config --global user.email "$git_email"
 
 # #######################################################
 # ## Install AUR helpers
