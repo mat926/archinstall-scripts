@@ -1,3 +1,5 @@
+set -e
+
 # #Create & add user
 # useradd -m testuser
 # echo "abc" | passwd -s testuser 
