@@ -23,7 +23,7 @@
 #######################################################
 ## Install KDE Plasma apps
 #######################################################
-sudo pacman -S --needed --noconfirm\
+sudo pacman -S --needed --noconfirm \
     plasma-desktop \
     sddm             \
     dolphin          \    # file manager
