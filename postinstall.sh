@@ -53,7 +53,8 @@ sudo pacman -S --needed --noconfirm \
     kde-gtk-config \
     kscreen \
     plasma-firewall \
-    konsole \ # temporary for testing
+    # temporary for testing
+    konsole \ 
     ufw
 
 # dolphin - file manager
