@@ -93,8 +93,8 @@ fi
 ## Install git
 #######################################################
 
-# sudo pacman -S --noconfirm --needed git
-# read -p "Enter your Git username: " git_username
+sudo pacman -S --noconfirm --needed git
+read -p "Enter your Git username: " git_username
 # read -p "Enter your Git email: " git_email
 
 # git config --global user.name "$git_username"
