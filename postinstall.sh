@@ -25,34 +25,60 @@
 #######################################################
 sudo pacman -S --needed --noconfirm \
     plasma-desktop \
-    sddm             \
-    dolphin          \    # file manager
-    spectacle        \    # screenshot tool
-    gwenview         \    # image viewer
-    okular           \    # pdf reader
-    plasma-nm        \    # network applet (very important!)
-    plasma-pa        \    # volume applet
-    powerdevil       \    # power management
-    bluedevil        \    # bluetooth (optional but useful)
-    plasma-systemmonitor \  #system monitor applet
-    kalk            \   #calculator
-    kdeconnect        \   #connect to phone
-    ksystemlog       \   #system log viewer
-    kfind          \   #file search utility
-    krdc           \   #remote desktop client
-    freerdp       \   #rdp backend for krdc
-    libvncserver \  #vnc backend for krdc
-    kdepgraphics-thumbnailers \     #thumbnails for images
-    ffmpegthumbs     \    # thumbnails for videos
-    # kdenetwork-filesharing \    #samba shares support
-    print-manager  \  # printer management
-    cups            \   # printing system
-    system-config-printer \     # printer configuration tool
-    sddm-kcm        \   #sddm configuration module for system settings
-    kde-gtk-config \     #gtk themes support
-    kscreen      \      #multi monitor management
-    plasma-firewall \    #firewall applet
-    ufw                 #uncomplicated firewall backend
+    sddm \
+    dolphin \
+    spectacle \
+    gwenview \
+    okular \
+    plasma-nm \
+    plasma-pa \
+    powerdevil \
+    bluedevil \
+    plasma-systemmonitor \
+    kalk \
+    kdeconnect \
+    ksystemlog \
+    kfind \
+    krdc \
+    freerdp \
+    libvncserver \
+    kdepgraphics-thumbnailers \
+    ffmpegthumbs \
+    print-manager \
+    cups \
+    system-config-printer \
+    sddm-kcm \
+    kde-gtk-config \
+    kscreen \
+    plasma-firewall \
+    ufw
+
+# dolphin - file manager
+# spectacle - screenshot tool
+# gwenview - image viewer
+# okular - pdf reader
+# plasma-nm - network applet (very important!)
+# plasma-pa - volume applet
+# powerdevil - power management
+# bluedevil - bluetooth (optional but useful)
+# plasma-systemmonitor - system monitor applet
+# kalk - calculator
+# kdeconnect - connect to phone
+# ksystemlog - system log viewer
+# kfind - file search utility
+# krdc - remote desktop client
+# freerdp - rdp backend for krdc
+# libvncserver - vnc backend for krdc
+# kdepgraphics-thumbnailers - thumbnails for images
+# ffmpegthumbs - thumbnails for videos
+# print-manager - printer management
+# cups - printing system
+# system-config-printer - printer configuration tool
+# sddm-kcm - sddm configuration module for system settings
+# kde-gtk-config - gtk themes support
+# kscreen - multi monitor management
+# plasma-firewall - firewall applet
+# ufw - uncomplicated firewall backend
 
 sudo systemctl enable sddm 
 
