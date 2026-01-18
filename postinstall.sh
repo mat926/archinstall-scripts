@@ -104,12 +104,12 @@ git config --global user.email "$git_email"
 # ## Install AUR helpers
 # #######################################################
 
-pacman -S --noconfirm --needed base-devel
+sudo pacman -S --noconfirm --needed base-devel
 cd /tmp
 git clone https://aur.archlinux.org/paru.git paru-tmp
 cd paru-tmp
 makepkg -si --noconfirm
 
 # # Clean up after
-# cd /tmp
-# rm -rf paru-tmp
+cd /tmp
+rm -rf paru-tmp
