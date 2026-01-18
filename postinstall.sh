@@ -93,23 +93,23 @@ fi
 ## Install git
 #######################################################
 
-sudo pacman -S --noconfirm --needed git
-read -p "Enter your Git username: " git_username
-read -p "Enter your Git email: " git_email
+# sudo pacman -S --noconfirm --needed git
+# read -p "Enter your Git username: " git_username
+# read -p "Enter your Git email: " git_email
 
-git config --global user.name "$git_username"
-git config --global user.email "$git_email"
+# git config --global user.name "$git_username"
+# git config --global user.email "$git_email"
 
-#######################################################
-## Install AUR helpers
-#######################################################
+# #######################################################
+# ## Install AUR helpers
+# #######################################################
 
-pacman -S --noconfirm --needed base-devel
-cd /tmp
-git clone https://aur.archlinux.org/paru.git paru-tmp
-cd paru-tmp
-makepkg -si --noconfirm
+# pacman -S --noconfirm --needed base-devel
+# cd /tmp
+# git clone https://aur.archlinux.org/paru.git paru-tmp
+# cd paru-tmp
+# makepkg -si --noconfirm
 
-# Clean up after
-cd /tmp
-rm -rf paru-tmp
+# # Clean up after
+# cd /tmp
+# rm -rf paru-tmp
