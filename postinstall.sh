@@ -45,14 +45,14 @@ sudo pacman -S --needed --noconfirm \
     kdepgraphics-thumbnailers \     #thumbnails for images
     ffmpegthumbs     \    # thumbnails for videos
     # kdenetwork-filesharing \    #samba shares support
-    print-manager    # printer management
-    cups             # printing system
-    system-config-printer # printer configuration tool
-    sddm-kcm         #sddm configuration module for system settings
-    kde-gtk-config  #gtk themes support
-    kscreen        #multi monitor management
-    plasma-firewall  #firewall applet
-    ufw              #uncomplicated firewall backend
+    print-manager  \  # printer management
+    cups            \   # printing system
+    system-config-printer \     # printer configuration tool
+    sddm-kcm        \   #sddm configuration module for system settings
+    kde-gtk-config \     #gtk themes support
+    kscreen      \      #multi monitor management
+    plasma-firewall \    #firewall applet
+    ufw                 #uncomplicated firewall backend
 
 sudo systemctl enable sddm 
 
