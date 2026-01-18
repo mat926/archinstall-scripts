@@ -56,7 +56,7 @@ sudo systemctl enable sddm
 
 #Configure Plasma/Wayland on Nvidia
 if lspci | grep -q -i nvidia; then
-
+    echo "TODO - Configure Plasma/Wayland on Nvidia cards"
 fi
 
 #######################################################
