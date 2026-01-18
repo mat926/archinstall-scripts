@@ -13,6 +13,9 @@
     "archinstall-language": "English",
     "auth_config": {},
     "custom_commands": [],
+    "disk_config": {
+        "config_type": "default_layout"
+    },
     "hostname": "archlinux",
     "kernels": [
         "linux",
