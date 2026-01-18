@@ -23,7 +23,35 @@
 #######################################################
 ## Install KDE Plasma apps
 #######################################################
-sudo pacman -S --needed --noconfirm plasma-desktop sddm dolphin spectacle gwenview okular plasma-nm plasma-pa powerdevil bluedevil plasma-systemmonitor kalk kdeconnect ksystemlog kfind krdc freerdp libvncserver kdepgraphics-thumbnailers ffmpegthumbs print-manager cups system-config-printer sddm-kcm kde-gtk-config kscreen plasma-firewall ufw
+sudo pacman -S --needed --noconfirm \
+    plasma-desktop \
+    sddm \
+    dolphin \
+    spectacle \
+    gwenview \
+    okular \
+    plasma-nm \
+    plasma-pa \
+    powerdevil \
+    bluedevil \
+    plasma-systemmonitor \
+    kalk \
+    kdeconnect \
+    ksystemlog \
+    kfind \
+    krdc \
+    freerdp \
+    libvncserver \
+    kdegraphics-thumbnailers \
+    ffmpegthumbs \
+    print-manager \
+    cups \
+    system-config-printer \
+    sddm-kcm \
+    kde-gtk-config \
+    kscreen \
+    plasma-firewall \
+    ufw
 
 # dolphin - file manager
 # spectacle - screenshot tool
@@ -41,12 +69,12 @@ sudo pacman -S --needed --noconfirm plasma-desktop sddm dolphin spectacle gwenvi
 # krdc - remote desktop client
 # freerdp - rdp backend for krdc
 # libvncserver - vnc backend for krdc
-# kdepgraphics-thumbnailers - thumbnails for images
+# kdegraphics-thumbnailers - thumbnails for images
 # ffmpegthumbs - thumbnails for videos
 # print-manager - printer management
 # cups - printing system
 # system-config-printer - printer configuration tool
-# sddm-kcm - sddm configuration module for system settings
+# sddm-kcm - sddm configuration module for system setting
 # kde-gtk-config - gtk themes support
 # kscreen - multi monitor management
 # plasma-firewall - firewall applet
@@ -56,7 +84,7 @@ sudo systemctl enable sddm
 
 #Configure Plasma/Wayland on Nvidia
 if lspci | grep -q -i nvidia; then
-    echo "TODO - Configure Plasma/Wayland on Nvidia cards"
+    echo "TODO : Configure Plasma/Wayland on Nvidia cards"
 fi
 
 #######################################################
