@@ -17,15 +17,18 @@ set -e
 #In a terminal run
 #curl -fsSL https://raw.githubusercontent.com/mat926/archinstall-scripts/refs/heads/main/postinstall.sh | bash
 # USERNAME=$(getent passwd 1000 | cut -d: -f1)
-# NOBODY="nobody"
+USERNAME=$(whoami)
+
 
 # Remove some of the bloat installed with KDE
 # pacman -Rns --noconfirm ark kate discover #konsole
 
+
+
 #######################################################
 ## Install KDE Plasma apps
 #######################################################
-sudo pacman -S --needed --noconfirm \
+sudo pacman -Sy --needed --noconfirm \
     plasma-desktop \
     sddm \
     dolphin \
@@ -41,9 +44,7 @@ sudo pacman -S --needed --noconfirm \
     kdeconnect \
     ksystemlog \
     kfind \
-    krdc \
-    freerdp \
-    libvncserver \
+    krdp \
     kdegraphics-thumbnailers \
     ffmpegthumbs \
     print-manager \
@@ -54,6 +55,9 @@ sudo pacman -S --needed --noconfirm \
     kscreen \
     plasma-firewall \
     konsole \
+    kwallet \
+    breeze-gtk \
+    kde-gtk-config \
     ufw
 
 # dolphin - file manager
@@ -70,6 +74,7 @@ sudo pacman -S --needed --noconfirm \
 # ksystemlog - system log viewer
 # kfind - file search utility
 # krdc - remote desktop client
+# krdp - remote desktop server
 # freerdp - rdp backend for krdc
 # libvncserver - vnc backend for krdc
 # kdegraphics-thumbnailers - thumbnails for images
@@ -81,6 +86,9 @@ sudo pacman -S --needed --noconfirm \
 # kde-gtk-config - gtk themes support
 # kscreen - multi monitor management
 # plasma-firewall - firewall applet
+# kwallet - password manager
+# breeze-gtk - breeze theme for gtk apps
+# kde-gtk-config - gtk theme configuration
 # ufw - uncomplicated firewall backend
 
 sudo systemctl enable sddm 
@@ -115,10 +123,105 @@ makepkg -si --noconfirm
 cd /tmp
 rm -rf paru-tmp
 
+paru -Sy
+
+#KDEConnect should be working at this point 
+
+# #######################################################
+# ## Install GPU drivers
+# #######################################################
+
+if lspci | grep -q -i nvidia; then
+    echo "TODO : install nvidia drivers"
+    paru -S --needed --noconfirm nvidia-580xx-dkms nvidia-580xx-utils
+fi
 
 
 
+# #######################################################
+# ## Install Brave
+# #######################################################
 
+paru -S --needed --noconfirm brave-bin
+
+# #######################################################
+# ## Install VLC
+# #######################################################
+
+sudo pacman -S --needed --noconfirm vlc
+
+# #######################################################
+# ## Install Steam
+# #######################################################
+
+#Enable multilib repository
+sudo sed -i '/#\[multilib\]/,/Include/ s/^#//' /etc/pacman.conf
+
+sudo pacman -Sy --needed --noconfirm steam
+
+
+# #######################################################
+# ## Install peazip
+# #######################################################
+
+paru -S --needed --noconfirm peazip-qt-bin
+
+# #######################################################
+# ## Install Remmina
+# #######################################################
+
+paru -S --needed --noconfirm remmina libvncserver freerdp
+
+# #######################################################
+# ## Install libreoffice
+# #######################################################
+#hunspell is for spell checking
+
+sudo pacman -S --needed --noconfirm libreoffice-still hunspell
+
+# #######################################################
+# ## Install Discord
+# #######################################################
+
+#libappindicator is needed for discord to show tray icon
+sudo pacman -S --needed --noconfirm discord libappindicator
+#libunity is needed for discord to display badge counts on taskbar icon
+paru -S --needed --noconfirm libunity
+
+# #######################################################
+# ## Install OBS
+# #######################################################
+
+sudo pacman -S --needed --noconfirm obs-studio
+
+# #######################################################
+# ## Install QEMU/virt-manager
+# #######################################################
+
+
+sudo pacman -S --needed libvirt qemu-full dnsmasq virt-manager dmidecode iptables-nft
+systemctl enable libvirtd.service
+systemctl enable libvirtd.socket
+systemctl enable ufw.service
+
+#Add user to the libvirt group
+sudo gpasswd -a $USERNAME libvirt
+
+#update nftables config to allow DNS/DHCP requests from VMs to host
+# Insert INPUT rule after policy line
+sudo sed -i '/chain input {/,/}/{/policy drop/a\
+    iifname virbr0 udp dport {53, 67} accept comment "allow VM dhcp/dns requests to host"
+}' /etc/nftables.conf
+
+# Insert FORWARD rules after policy line
+sudo sed -i '/chain forward {/,/}/{/policy drop/a\
+    iifname virbr0 accept\
+    oifname virbr0 accept
+}' /etc/nftables.conf
+
+# #######################################################
+# ##  Finished
+# #######################################################
 
 echo "Post-installation script completed successfully!"
 
@@ -129,3 +232,5 @@ for i in {10..1}; do
 done
 
 reboot
+
+#For fixing buzzing from speakers https://youtu.be/Kt0dkXWnaC4
