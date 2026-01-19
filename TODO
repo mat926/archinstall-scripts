@@ -16,6 +16,12 @@ emoji selector
 kwrite
 polychromatic
 chrome?
+xdg-utils? 
+wireless-tools?
+wget?
+smartmontools?
+openssh?
+iwd?
 
 
 

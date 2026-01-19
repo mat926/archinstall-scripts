@@ -1,17 +1,5 @@
 set -e
 
-# #Create & add user
-# useradd -m testuser
-# echo "abc" | passwd -s testuser 
-
-# #Make user a sudo user
-# echo "testuser ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-
-# #lougout root and login as the new user
-# exit
-
-
-
 
 #USAGE
 #In a terminal run
@@ -58,7 +46,7 @@ sudo pacman -Sy --needed --noconfirm \
     kwallet \
     breeze-gtk \
     kde-gtk-config \
-    # kwalletmanager \
+    kwalletmanager \
     ufw
 
 # dolphin - file manager
