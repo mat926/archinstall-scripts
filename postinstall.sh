@@ -78,7 +78,7 @@ sudo pacman -Sy --needed --noconfirm \
 # kwallet - password manager
 # breeze-gtk - breeze theme for gtk apps
 # kde-gtk-config - gtk theme configuration
-# kwalletmanager - kwallet management app
+# kwalletmanager - kwallet management app #TODO remove?
 # ufw - uncomplicated firewall backend
 
 sudo systemctl enable sddm 
@@ -109,9 +109,9 @@ git clone https://aur.archlinux.org/paru.git paru-tmp
 cd paru-tmp
 makepkg -si --noconfirm
 
-# # Clean up after
-cd /tmp
-rm -rf paru-tmp
+# # Clean up after #TODO uncomment later
+# cd /tmp
+# rm -rf paru-tmp
 
 paru -Sy
 
@@ -189,7 +189,7 @@ sudo pacman -S --needed --noconfirm obs-studio
 # #######################################################
 
 
-sudo pacman -S --needed libvirt qemu-full dnsmasq virt-manager dmidecode iptables-nft
+sudo pacman -S --needed libvirt qemu-full dnsmasq virt-manager dmidecode iptables-nft  < /dev/tty
 systemctl enable libvirtd.service libvirtd.socket ufw.service
 
 #Add user to the libvirt group
