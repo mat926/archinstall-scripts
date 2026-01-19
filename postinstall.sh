@@ -105,7 +105,10 @@ git config --global user.email "$git_email"
 
 sudo pacman -S --noconfirm --needed base-devel
 cd /tmp
-git clone https://aur.archlinux.org/paru.git paru-tmp
+#check if the directory exists first
+if [ ! -d "paru-tmp" ]; then
+    git clone https://aur.archlinux.org/paru.git paru-tmp
+fi
 cd paru-tmp
 makepkg -si --noconfirm
 
