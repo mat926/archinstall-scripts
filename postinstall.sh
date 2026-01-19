@@ -219,6 +219,8 @@ sudo sed -i '/chain forward {/,/}/{/policy drop/a\
     oifname virbr0 accept
 }' /etc/nftables.conf
 
+#TODO automatically add the storage pools
+
 # #######################################################
 # ## Install VS Code
 # #######################################################
@@ -254,3 +256,4 @@ done
 reboot
 
 #For fixing buzzing from speakers https://youtu.be/Kt0dkXWnaC4
+#TODO automatically mount storage drive
