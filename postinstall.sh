@@ -58,6 +58,7 @@ sudo pacman -Sy --needed --noconfirm \
     kwallet \
     breeze-gtk \
     kde-gtk-config \
+    # kwalletmanager \
     ufw
 
 # dolphin - file manager
@@ -89,6 +90,7 @@ sudo pacman -Sy --needed --noconfirm \
 # kwallet - password manager
 # breeze-gtk - breeze theme for gtk apps
 # kde-gtk-config - gtk theme configuration
+# kwalletmanager - kwallet management app
 # ufw - uncomplicated firewall backend
 
 sudo systemctl enable sddm 
@@ -200,9 +202,7 @@ sudo pacman -S --needed --noconfirm obs-studio
 
 
 sudo pacman -S --needed libvirt qemu-full dnsmasq virt-manager dmidecode iptables-nft
-systemctl enable libvirtd.service
-systemctl enable libvirtd.socket
-systemctl enable ufw.service
+systemctl enable libvirtd.service libvirtd.socket ufw.service
 
 #Add user to the libvirt group
 sudo gpasswd -a $USERNAME libvirt
@@ -218,6 +218,26 @@ sudo sed -i '/chain forward {/,/}/{/policy drop/a\
     iifname virbr0 accept\
     oifname virbr0 accept
 }' /etc/nftables.conf
+
+# #######################################################
+# ## Install VS Code
+# #######################################################
+
+paru -S --needed --noconfirm code code-marketplace
+
+# #######################################################
+# ## Install Zoom
+# #######################################################
+
+paru -S --needed --noconfirm zoom
+
+
+
+# #######################################################
+# ## Install Proton VPN
+# #######################################################
+
+sudo pacman -S --needed --noconfirm proton-vpn-gtk-app
 
 # #######################################################
 # ##  Finished
