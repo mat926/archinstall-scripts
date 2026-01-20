@@ -11,7 +11,30 @@ USERNAME=$(whoami)
 # Remove some of the bloat installed with KDE
 # pacman -Rns --noconfirm ark kate discover #konsole
 
+#######################################################
+## Questions
+#######################################################
 
+read -p "Enter your Git username: " GIT_USERNAME < /dev/tty
+read -p "Enter your Git email: " GIT_EMAIL < /dev/tty
+
+read -p "Are you using any Razer pheripherals? (y/N) " REPLY < /dev/tty
+
+# Default to "no" if user just presses Enter
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    HAS_RAZER=true
+else
+    HAS_RAZER=false
+fi
+
+read -p "Are you mounting an additional HDD drive formatted in NTFS? (y/N) " REPLY < /dev/tty
+
+# Default to "no" if user just presses Enter
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    HAS_NTFS_HDD=true
+else
+    HAS_NTFS_HDD=false
+fi
 
 #######################################################
 ## Install KDE Plasma apps
@@ -93,11 +116,9 @@ fi
 #######################################################
 
 sudo pacman -S --noconfirm --needed git
-read -p "Enter your Git username: " git_username < /dev/tty
-read -p "Enter your Git email: " git_email < /dev/tty
 
-git config --global user.name "$git_username"
-git config --global user.email "$git_email"
+git config --global user.name "$GIT_USERNAME"
+git config --global user.email "$GIT_EMAIL"
 
 # #######################################################
 # ## Install AUR helpers
@@ -188,9 +209,20 @@ paru -S --needed --noconfirm libunity
 sudo pacman -S --needed --noconfirm obs-studio
 
 # #######################################################
-# ## Install QEMU/virt-manager
+# ## Install Razer polychromatic
 # #######################################################
 
+#TODO test
+if [ "$HAS_RAZER" = true ] ; then
+    sudo pacman -S --needed --noconfirm linux-headers linux-lts-headers
+    paru -S --needed --noconfirm polychromatic 
+    #Add user to the openrazer group to allow access to the Razer devices
+    sudo gpasswd -a $USERNAME openrazer
+fi
+
+# #######################################################
+# ## Install QEMU/virt-manager
+# #######################################################
 
 sudo pacman -S --needed libvirt qemu-full dnsmasq virt-manager dmidecode iptables-nft  < /dev/tty
 systemctl enable libvirtd.service libvirtd.socket ufw.service
@@ -224,13 +256,24 @@ paru -S --needed --noconfirm code code-marketplace
 
 paru -S --needed --noconfirm zoom
 
-
-
 # #######################################################
 # ## Install Proton VPN
 # #######################################################
 
 sudo pacman -S --needed --noconfirm proton-vpn-gtk-app
+
+# #######################################################
+# ## Install Betterbird
+# #######################################################
+
+paru -S --needed --noconfirm betterbird-bin
+
+# #######################################################
+# ## Install CLI tools
+# #######################################################
+
+paru -S --needed --noconfirm vim nano htop wget jq openssh
+
 
 # #######################################################
 # ##  Finished
