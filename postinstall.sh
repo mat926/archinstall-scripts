@@ -145,8 +145,8 @@ paru -Sy
 # ## Install GPU drivers
 # #######################################################
 
-if lspci | grep -q -i nvidia; then
-    echo "TODO : install nvidia drivers"
+if lspci | grep -i nvidia | grep -i "gtx 1080"; then
+    echo "Detected GTX 1080 - installing legacy 580.xx drivers (required since late 2025)"
     paru -S --needed --noconfirm nvidia-580xx-dkms nvidia-580xx-utils
 fi
 
