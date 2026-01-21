@@ -15,7 +15,6 @@ chrome?
 xdg-utils? 
 wireless-tools?
 smartmontools?
-openssh?
 iwd?
 
 

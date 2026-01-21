@@ -162,7 +162,7 @@ paru -S --needed --noconfirm brave-bin
 # ## Install VLC
 # #######################################################
 
-sudo pacman -S --needed --noconfirm vlc
+sudo pacman -S --needed --noconfirm vlc vlc-plugins-all
 
 # #######################################################
 # ## Install Steam
@@ -219,6 +219,36 @@ if [ "$HAS_RAZER" = true ] ; then
     #Add user to the openrazer group to allow access to the Razer devices
     sudo gpasswd -a $USERNAME openrazer
 fi
+
+# #######################################################
+# ## Install and setup storage drive NTFS mount
+# #######################################################
+
+if [ "$HAS_NTFS_HDD" = true ] ; then
+    sudo pacman -S --needed --noconfirm gsmartcontrol ntfs-3g
+    sudo systemctl enable smartd
+    #Add user to the openrazer group to allow access to the Razer devices
+    sudo gpasswd -a $USERNAME openrazer
+fi
+
+
+# #######################################################
+# ## Install Dolphin plugins
+# #######################################################
+
+sudo pacman -S --needed --noconfirm libheif libappimage dolphin-plugins
+# libheif : Shows thumbnails for HEIC images
+# libappimage : embedded *.AppImage icons
+# dolphin-plugins: adds Git, Bazaar, Mercurial and Dropbox support and some mounting actions
+
+
+# audiocd-kio: adds audio CD support
+# baloo: extends tagging support (see #File tagging)
+# kio-admin: allows managing files as administrator
+# kio-gdrive: adds Google Drive support (see #KIO slaves)
+# kompare: adds the Compare files dialog (Alternatively, select two files: {right click} > Open With > {your diff tool}.)
+# konsole: integrated terminal panel
+
 
 # #######################################################
 # ## Install QEMU/virt-manager
