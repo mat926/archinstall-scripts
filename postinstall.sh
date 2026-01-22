@@ -36,6 +36,15 @@ else
     HAS_NTFS_HDD=false
 fi
 
+read -p "Are you dual booting with Windows? (Y/b) " REPLY < /dev/tty
+
+# Default to "no" if user just presses Enter
+if [[ $REPLY =~ ^[Nn]$ ]]; then
+    IS_WIN_DUALBOOT=false
+else
+    IS_WIN_DUALBOOT=true
+fi
+
 #######################################################
 ## Install KDE Plasma apps
 #######################################################
@@ -60,6 +69,9 @@ sudo pacman -Sy --needed --noconfirm \
     ffmpegthumbs \
     print-manager \
     cups \
+    kcron \
+    kinfocenter \
+    partitionmanager \
     system-config-printer \
     sddm-kcm \
     kde-gtk-config \
@@ -87,6 +99,9 @@ sudo pacman -Sy --needed --noconfirm \
 # kfind - file search utility
 # krdc - remote desktop client
 # krdp - remote desktop server
+# kcron - cron job manager
+# kinfocenter - system information
+# partitionmanager - disk partitioning tool
 # freerdp - rdp backend for krdc
 # libvncserver - vnc backend for krdc
 # kdegraphics-thumbnailers - thumbnails for images
@@ -298,11 +313,49 @@ sudo pacman -S --needed --noconfirm proton-vpn-gtk-app
 
 paru -S --needed --noconfirm betterbird-bin
 
+
+# #######################################################
+# ## Install Ventoy
+# #######################################################
+
+#Commented out for now https://github.com/ventoy/Ventoy/issues/3224
+#paru -S --needed --noconfirm ventoy-bin
+
+# #######################################################
+# ## Install Balena Etcher (replacement for Ventoy) - Optional
+# #######################################################
+
+#Commented out for now https://github.com/ventoy/Ventoy/issues/3224
+# paru -S --needed --noconfirm balena-etcher
+
+# #######################################################
+# ## Enable services
+# #######################################################
+
+sudo systemctl enable cronie.service 
+
+
+# #######################################################
+# ## Install arch-update 
+# #######################################################
+
+paru -S --needed --noconfirm arch-update
+
+#enable the system tray
+arch-update --tray --enable
+
+#enable the systemd timer to perform automatic and periodic checks for available updates
+systemctl --user enable arch-update.timer
+
+
 # #######################################################
 # ## Install CLI tools
 # #######################################################
 
-paru -S --needed --noconfirm vim nano htop wget jq openssh
+paru -S --needed --noconfirm vim nano htop wget jq openssh arch-audit man-db
+
+#arch-audit : security audit tool for installed packages
+#man-db : tools for reading man pages 
 
 
 # #######################################################
