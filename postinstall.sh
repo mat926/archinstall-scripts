@@ -216,6 +216,8 @@ sudo pacman -S --needed --noconfirm libreoffice-still hunspell
 sudo pacman -S --needed --noconfirm discord libappindicator
 #libunity is needed for discord to display badge counts on taskbar icon
 paru -S --needed --noconfirm libunity
+#TODO disable update checks https://wiki.archlinux.org/title/Discord#Discord_asks_for_an_update_not_yet_available_in_the_repository
+
 
 # #######################################################
 # ## Install OBS
