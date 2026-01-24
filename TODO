@@ -1,12 +1,12 @@
 Apps to install
 
 docker
-insomnia
-DBBrowser
 notepad++ 
 dropbox
 onedrive
-moonlight
+moonlight/sunshine
+db browser for sqlite
+samsung magician
 info center
 crashed process viewer
 emoji selector
@@ -16,12 +16,11 @@ xdg-utils?
 wireless-tools?
 smartmontools?
 iwd?
+clamav
 
 
 
 
-AUR:
-peazip
 
 
 Add pzip to dolphin context menu:
