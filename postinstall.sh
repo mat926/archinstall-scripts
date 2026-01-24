@@ -33,7 +33,7 @@ else
     HAS_NTFS_HDD=false
 fi
 
-read -p "Are you dual booting with Windows? (Y/b) " REPLY < /dev/tty
+read -p "Are you dual booting with Windows? (Y/n) " REPLY < /dev/tty
 
 # Default to "no" if user just presses Enter
 if [[ $REPLY =~ ^[Nn]$ ]]; then
