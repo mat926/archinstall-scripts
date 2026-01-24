@@ -226,102 +226,102 @@ sudo pacman -S --needed --noconfirm obs-studio
 # ## Install Clam AV
 # #######################################################
 
-sudo pacman -S --needed --noconfirm clamav
+# sudo pacman -S --needed --noconfirm clamav
 
-# Set up clamd.conf
-sudo sed -i '/#ExtendedDetectionInfo yes/s/^#//' /etc/clamav/clamd.conf
-sudo sed -i '/#MaxDirectoryRecursion 20/s/^#//' /etc/clamav/clamd.conf
-sudo sed -i '/#DetectPUA yes/s/^#//' /etc/clamav/clamd.conf
-sudo sed -i 's/^#ScanPE[[:space:]]\+no[[:space:]]*$/ScanPE yes/' /etc/clamav/clamd.conf
-sudo sed -i 's/^#ScanOLE2[[:space:]]\+no[[:space:]]*$/ScanOLE2 yes/' /etc/clamav/clamd.conf
-sudo sed -i 's/^#ScanPDF[[:space:]]\+no[[:space:]]*$/ScanPDF yes/' /etc/clamav/clamd.conf
-sudo sed -i 's/^#ScanSWF[[:space:]]\+no[[:space:]]*$/ScanSWF yes/' /etc/clamav/clamd.conf
-sudo sed -i 's/^#ScanXMLDOCS[[:space:]]\+no[[:space:]]*$/ScanXMLDOCS yes/' /etc/clamav/clamd.conf
-sudo sed -i 's/^#ScanHWP3[[:space:]]\+no[[:space:]]*$/ScanHWP3 yes/' /etc/clamav/clamd.conf
-sudo sed -i 's/^#ScanOneNote[[:space:]]\+no[[:space:]]*$/ScanOneNote yes/' /etc/clamav/clamd.conf
-sudo sed -i 's/^#ScanMail[[:space:]]\+no[[:space:]]*$/ScanMail yes/' /etc/clamav/clamd.conf
-sudo sed -i 's/^#ScanHTML[[:space:]]\+no[[:space:]]*$/ScanHTML yes/' /etc/clamav/clamd.conf
-sudo sed -i 's/^#ScanArchive[[:space:]]\+no[[:space:]]*$/ScanArchive yes/' /etc/clamav/clamd.conf
-sudo sed -i 's/^#ScanImage[[:space:]]\+no[[:space:]]*$/ScanImage yes/' /etc/clamav/clamd.conf
-sudo sed -i 's/^#Bytecode[[:space:]]\+no[[:space:]]*$/Bytecode yes/' /etc/clamav/clamd.conf
+# # Set up clamd.conf
+# sudo sed -i '/#ExtendedDetectionInfo yes/s/^#//' /etc/clamav/clamd.conf
+# sudo sed -i '/#MaxDirectoryRecursion 20/s/^#//' /etc/clamav/clamd.conf
+# sudo sed -i '/#DetectPUA yes/s/^#//' /etc/clamav/clamd.conf
+# sudo sed -i 's/^#ScanPE[[:space:]]\+no[[:space:]]*$/ScanPE yes/' /etc/clamav/clamd.conf
+# sudo sed -i 's/^#ScanOLE2[[:space:]]\+no[[:space:]]*$/ScanOLE2 yes/' /etc/clamav/clamd.conf
+# sudo sed -i 's/^#ScanPDF[[:space:]]\+no[[:space:]]*$/ScanPDF yes/' /etc/clamav/clamd.conf
+# sudo sed -i 's/^#ScanSWF[[:space:]]\+no[[:space:]]*$/ScanSWF yes/' /etc/clamav/clamd.conf
+# sudo sed -i 's/^#ScanXMLDOCS[[:space:]]\+no[[:space:]]*$/ScanXMLDOCS yes/' /etc/clamav/clamd.conf
+# sudo sed -i 's/^#ScanHWP3[[:space:]]\+no[[:space:]]*$/ScanHWP3 yes/' /etc/clamav/clamd.conf
+# sudo sed -i 's/^#ScanOneNote[[:space:]]\+no[[:space:]]*$/ScanOneNote yes/' /etc/clamav/clamd.conf
+# sudo sed -i 's/^#ScanMail[[:space:]]\+no[[:space:]]*$/ScanMail yes/' /etc/clamav/clamd.conf
+# sudo sed -i 's/^#ScanHTML[[:space:]]\+no[[:space:]]*$/ScanHTML yes/' /etc/clamav/clamd.conf
+# sudo sed -i 's/^#ScanArchive[[:space:]]\+no[[:space:]]*$/ScanArchive yes/' /etc/clamav/clamd.conf
+# sudo sed -i 's/^#ScanImage[[:space:]]\+no[[:space:]]*$/ScanImage yes/' /etc/clamav/clamd.conf
+# sudo sed -i 's/^#Bytecode[[:space:]]\+no[[:space:]]*$/Bytecode yes/' /etc/clamav/clamd.conf
 
-sudo sed -i -E \
-  -e 's/^[[:space:]]*#ExcludePath[[:space:]]+\^\/proc\//&# [disabled] /' \
-  -e 's/^[[:space:]]*#ExcludePath[[:space:]]+\^\/sys\//&# [disabled] /' \
-  /etc/clamav/clamd.conf
-sudo sed -i -E \
-  -e '/^[[:space:]]*#ExcludePath[[:space:]]+\^\/proc\//a\
-ExcludePath ~/.local/share/Trash
-' \
-  /etc/clamav/clamd.conf
+# sudo sed -i -E \
+#   -e 's/^[[:space:]]*#ExcludePath[[:space:]]+\^\/proc\//&# [disabled] /' \
+#   -e 's/^[[:space:]]*#ExcludePath[[:space:]]+\^\/sys\//&# [disabled] /' \
+#   /etc/clamav/clamd.conf
+# sudo sed -i -E \
+#   -e '/^[[:space:]]*#ExcludePath[[:space:]]+\^\/proc\//a\
+# ExcludePath ~/.local/share/Trash
+# ' \
+#   /etc/clamav/clamd.conf
 
-sudo sed -i '/#AlertBrokenExecutables yes/s/^#//' /etc/clamav/clamd.conf
-sudo sed -i '/#AlertBrokenMedia yes/s/^#//' /etc/clamav/clamd.conf
-sudo sed -i '/#AlertEncrypted yes/s/^#//' /etc/clamav/clamd.conf
-sudo sed -i '/#AlertEncryptedArchive yes/s/^#//' /etc/clamav/clamd.conf
-sudo sed -i '/#AlertEncryptedDoc yes/s/^#//' /etc/clamav/clamd.conf
-sudo sed -i '/#AlertOLE2Macros yes/s/^#//' /etc/clamav/clamd.conf
-sudo sed -i '/#AlertPartitionIntersection yes/s/^#//' /etc/clamav/clamd.conf
+# sudo sed -i '/#AlertBrokenExecutables yes/s/^#//' /etc/clamav/clamd.conf
+# sudo sed -i '/#AlertBrokenMedia yes/s/^#//' /etc/clamav/clamd.conf
+# sudo sed -i '/#AlertEncrypted yes/s/^#//' /etc/clamav/clamd.conf
+# sudo sed -i '/#AlertEncryptedArchive yes/s/^#//' /etc/clamav/clamd.conf
+# sudo sed -i '/#AlertEncryptedDoc yes/s/^#//' /etc/clamav/clamd.conf
+# sudo sed -i '/#AlertOLE2Macros yes/s/^#//' /etc/clamav/clamd.conf
+# sudo sed -i '/#AlertPartitionIntersection yes/s/^#//' /etc/clamav/clamd.conf
 
-sudo sed -i 's/^#OnAccessMaxFileSize[[:space:]]\+10M[[:space:]]*$/OnAccessMaxFileSize 1G/' /etc/clamav/clamd.conf
-sudo sed -i '/^#OnAccessExcludePath[[:space:]]/a\
-OnAccessExcludePath ~/.*/\.local/share/Trash
-' /etc/clamav/clamd.conf
+# sudo sed -i 's/^#OnAccessMaxFileSize[[:space:]]\+10M[[:space:]]*$/OnAccessMaxFileSize 1G/' /etc/clamav/clamd.conf
+# sudo sed -i '/^#OnAccessExcludePath[[:space:]]/a\
+# OnAccessExcludePath ~/.*/\.local/share/Trash
+# ' /etc/clamav/clamd.conf
 
 
-#enable automatic database updates in freshclam.conf
-sudo touch /var/log/clamav/freshclam.log
-sudo chmod 600 /var/log/clamav/freshclam.log
-sudo chown clamav /var/log/clamav/freshclam.log
+# #enable automatic database updates in freshclam.conf
+# sudo touch /var/log/clamav/freshclam.log
+# sudo chmod 600 /var/log/clamav/freshclam.log
+# sudo chown clamav /var/log/clamav/freshclam.log
 
-#add sock file
-sudo touch /run/clamav/clamd.ctl
-sudo chown clamav:clamav /run/clamav/clamd.ctl
+# #add sock file
+# sudo touch /run/clamav/clamd.ctl
+# sudo chown clamav:clamav /run/clamav/clamd.ctl
 
-#enable real time protection OnAccess scanning
-sudo sed -i '/#OnAccessExcludeUname clamav/s/^#//' /etc/clamav/clamd.conf
-sudo sed -i '/^#OnAccessMountPath \/$/s/^#//' /etc/clamav/clamd.conf
-sudo sed -i 's/^#OnAccessPrevention[[:space:]]\+yes[[:space:]]*$/OnAccessPrevention no/' /etc/clamav/clamd.conf
-sudo sed -i '/#OnAccessExtraScanning yes/s/^#//' /etc/clamav/clamd.conf
+# #enable real time protection OnAccess scanning
+# sudo sed -i '/#OnAccessExcludeUname clamav/s/^#//' /etc/clamav/clamd.conf
+# sudo sed -i '/^#OnAccessMountPath \/$/s/^#//' /etc/clamav/clamd.conf
+# sudo sed -i 's/^#OnAccessPrevention[[:space:]]\+yes[[:space:]]*$/OnAccessPrevention no/' /etc/clamav/clamd.conf
+# sudo sed -i '/#OnAccessExtraScanning yes/s/^#//' /etc/clamav/clamd.conf
 
-#set up notification popups for alerts
-sudo sed -i 's|^#VirusEvent[[:space:]]\+/opt/send_virus_alert_sms\.sh[[:space:]]*$|VirusEvent /etc/clamav/virus-event.bash|' /etc/clamav/clamd.conf
-# allow the clamav user to run notify-send as any user with custom environment variables via sudo:
-sudo touch /etc/sudoers.d/clamav
-echo "clamav ALL = (ALL) NOPASSWD: SETENV: /usr/bin/notify-send" | sudo tee /etc/sudoers.d/clamav
+# #set up notification popups for alerts
+# sudo sed -i 's|^#VirusEvent[[:space:]]\+/opt/send_virus_alert_sms\.sh[[:space:]]*$|VirusEvent /etc/clamav/virus-event.bash|' /etc/clamav/clamd.conf
+# # allow the clamav user to run notify-send as any user with custom environment variables via sudo:
+# sudo touch /etc/sudoers.d/clamav
+# echo "clamav ALL = (ALL) NOPASSWD: SETENV: /usr/bin/notify-send" | sudo tee /etc/sudoers.d/clamav
 
-sudo tee /etc/clamav/virus-event.bash > /dev/null << 'EOF'
-#!/bin/bash
-PATH=/usr/bin
-ALERT="Signature detected by clamav: $CLAM_VIRUSEVENT_VIRUSNAME in $CLAM_VIRUSEVENT_FILENAME"
+# sudo tee /etc/clamav/virus-event.bash > /dev/null << 'EOF'
+# #!/bin/bash
+# PATH=/usr/bin
+# ALERT="Signature detected by clamav: $CLAM_VIRUSEVENT_VIRUSNAME in $CLAM_VIRUSEVENT_FILENAME"
 
-# Send an alert to all graphical users.
-for ADDRESS in /run/user/*; do
-    USERID=${ADDRESS#/run/user/}
-    /usr/bin/sudo -u "#$USERID" DBUS_SESSION_BUS_ADDRESS="unix:path=$ADDRESS/bus" PATH=${PATH} \
-        /usr/bin/notify-send -u critical -i dialog-warning "Virus found!" "$ALERT"
-done
-EOF
+# # Send an alert to all graphical users.
+# for ADDRESS in /run/user/*; do
+#     USERID=${ADDRESS#/run/user/}
+#     /usr/bin/sudo -u "#$USERID" DBUS_SESSION_BUS_ADDRESS="unix:path=$ADDRESS/bus" PATH=${PATH} \
+#         /usr/bin/notify-send -u critical -i dialog-warning "Virus found!" "$ALERT"
+# done
+# EOF
 
-sudo chmod +x /etc/clamav/virus-event.bash
+# sudo chmod +x /etc/clamav/virus-event.bash
 
-#  instruct clamonacc (which always runs as root) to use file descriptor passing
-sudo mkdir -p /etc/systemd/system/clamav-clamonacc.service.d
-sudo tee /etc/systemd/system/clamav-clamonacc.service.d/override.conf > /dev/null << 'EOF'
-[Service]
-ExecStart=
-ExecStart=/usr/sbin/clamonacc -F --fdpass --log=/var/log/clamav/clamonacc.log
-EOF
+# #  instruct clamonacc (which always runs as root) to use file descriptor passing
+# sudo mkdir -p /etc/systemd/system/clamav-clamonacc.service.d
+# sudo tee /etc/systemd/system/clamav-clamonacc.service.d/override.conf > /dev/null << 'EOF'
+# [Service]
+# ExecStart=
+# ExecStart=/usr/sbin/clamonacc -F --fdpass --log=/var/log/clamav/clamonacc.log
+# EOF
 
-sudo systemctl enable clamav-clamonacc.service clamav-freshclam.service clamav-daemon.service
+# sudo systemctl enable clamav-clamonacc.service clamav-freshclam.service clamav-daemon.service
 
-##Add more databases/signatures repositories
-paru -S --needed --noconfirm python-fangfrisch
-sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
-sudo systemctl enable fangfrisch.timer
+# ##Add more databases/signatures repositories
+# paru -S --needed --noconfirm python-fangfrisch
+# sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
+# sudo systemctl enable fangfrisch.timer
 
-#update virus definitions
-sudo freshclam
+# #update virus definitions
+# sudo freshclam
 
 ##TESTING REALTIME SCANNING
 # sudo pacman -S --needed --noconfirm wget
@@ -412,7 +412,7 @@ paru -S --needed --noconfirm zoom
 # ## Install Timeshift - expirimental
 # #######################################################
 
-# paru -S --needed --noconfirm timeshift
+paru -S --needed --noconfirm timeshift
 
 
 # #######################################################
